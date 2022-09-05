@@ -16,7 +16,7 @@ export default function NavBar() {
                     <Link to='/listContainers'>Containers</Link>
                 </li>
                 <li>
-                    <Link to='/'><button>Criar</button></Link>
+                    <Link to='/'>Criar</Link>
                 </li>
             </ul>
         </div>

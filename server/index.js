@@ -4,15 +4,15 @@ const mysql = require('mysql2');
 
 const app = express();
 
-app.use(express.json());
-app.use(cors());
-
 const db = mysql.createPool({
     host: "localhost",
     user: "Eduardo",
     password: "1234",
     database: "testepratico"
 });
+
+app.use(express.json());
+app.use(cors());
 
 
 app.post("/createContainer", (req, res) => {
@@ -48,7 +48,7 @@ app.put("/edit", (req, res) => {
     const { status } = req.body;
     const { category } = req.body;
 
-    let SQL = "UPDATE createcontainer SET clientName = ?, numContainer = ?, type = ?, status = ?, category = ? WHERE idCreateContainer";
+    let SQL = "UPDATE createcontainer SET clientName = ?, numContainer = ?, type = ?, status = ?, category = ? WHERE idCreateContainer = ?";
 
     db.query(SQL, [clientName, numContainer, type, status, category, id], (err, result) => {
         err ? console.log(err) : res.send(result)
@@ -58,7 +58,7 @@ app.put("/edit", (req, res) => {
 app.delete("/delete/:id", (req, res) => {
     const { id } = req.params;
 
-    let SQL = "DELETE FROM createcontainer WHERE idCreateContainer";
+    let SQL = "DELETE FROM createcontainer WHERE idCreateContainer = ?";
 
     db.query(SQL, [id], (err, result) => {
         err ? console.log(err) : res.send(result)

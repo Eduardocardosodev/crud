@@ -119,7 +119,7 @@ export default function FormDialog(props) {
                 Excluir
             </Button>
 
-            <Button onClick={handleEdit} color="primary">
+            <Button onClick={() => handleEdit()} color="primary">
                 Salvar
             </Button>
         </DialogActions>

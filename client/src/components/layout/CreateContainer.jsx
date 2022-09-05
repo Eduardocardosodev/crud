@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Axios from 'axios';
+import { Form } from '../styled/CreateContainerStyled';
 
 export default function CreateContainer() {
 
@@ -38,39 +39,52 @@ export default function CreateContainer() {
 
   return (
     <div>
-        <form>
-            <input 
-            type="text" 
-            name="clientName" 
-            placeholder='Nome'
-            onChange={handleChangeValues} />
+        <Form>
+            <div className='div-dentro'>
+                <div>
+                    <label>Nome do Cliente: </label>
+                    <input 
+                    type="text" 
+                    name="clientName" 
+                    placeholder='Jorge'
+                    onChange={handleChangeValues} />
+                </div>
+                <div>
+                    <label>Tipo: </label>
+                    <input 
+                    type="text" 
+                    name="type" 
+                    placeholder='Ex: 20/40'
+                    onChange={handleChangeValues} />
+                </div>
+                <div>
+                    <label>Numero do Container: </label>
+                    <input 
+                    type="text" 
+                    name="numContainer" 
+                    placeholder='ABCD1234567'
+                    onChange={handleChangeValues} />
+                </div>
+                <div>
+                    <label>Status: </label>
+                    <input 
+                    type="text" 
+                    name="status" 
+                    placeholder='Cheio/Vazio'
+                    onChange={handleChangeValues} />
+                </div>
+                <div>
+                    <label>Categoria: </label>
+                    <input 
+                    type="text" 
+                    name="category" 
+                    placeholder='Importacao/Exportacao'
+                    onChange={handleChangeValues} />
+                </div>
 
-            <input 
-            type="text" 
-            name="numContainer" 
-            placeholder='Numero do Container'
-            onChange={handleChangeValues} />
-
-            <input 
-            type="text" 
-            name="type" 
-            placeholder='Tipo' 
-            onChange={handleChangeValues}/>
-
-            <input 
-            type="text" 
-            name="status" 
-            placeholder='Status' 
-            onChange={handleChangeValues}/>
-
-            <input 
-            type="text" 
-            name="category" 
-            placeholder='Categoria' 
-            onChange={handleChangeValues}/>
-
-            <button onClick={() => handleClickButton()}>Criar</button>
-        </form>
+                <button onClick={() => handleClickButton()}>Registrar</button>
+            </div>
+        </Form>
 
 
     </div>

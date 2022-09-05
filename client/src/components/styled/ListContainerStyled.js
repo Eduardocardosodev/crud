@@ -18,10 +18,12 @@ display: flex;
   
   h2 {
     display: inline;
+    font-size: 20px;
   }
   
   h3 {
     margin-top: 15px;
+    font-size: 14px;
   }
   
   div:hover {
