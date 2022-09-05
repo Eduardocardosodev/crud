@@ -2,18 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
-display: flex;
+    display: flex;
     justify-content: center;
-
-    div{
-        width: 250px;
-    
-        border: 3px solid #000000;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 5px;
-        cursor: pointer;
-    }
+    width: 270px;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    margin: 10px auto;
+    cursor: pointer;
 
   
   h2 {
@@ -26,7 +21,7 @@ display: flex;
     font-size: 14px;
   }
   
-  div:hover {
+  :hover {
     background-color: aqua;
   }
 
